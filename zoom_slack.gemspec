@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   s.bindir        = "bin"
   s.executables   << "zoom_slack"
-  s.require_paths = ["lib"]
 
   s.add_dependency "faraday"
   s.add_dependency "immutable-struct"

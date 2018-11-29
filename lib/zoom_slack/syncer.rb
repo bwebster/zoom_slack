@@ -2,11 +2,8 @@
 
 module ZoomSlack
   class Syncer
-    def self.sync
-      new.sync
-    end
-
-    def initialize(profile_updater: ProfileUpdater.new,
+    def initialize(token:,
+                   profile_updater: ProfileUpdater.new(token: token),
                    process_detector: ProcessDetector.for_platform)
       self.profile_updater = profile_updater
       self.process_detector = process_detector
