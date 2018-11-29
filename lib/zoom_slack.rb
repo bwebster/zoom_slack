@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+module ZoomSlack
+end
+
+require "zoom_slack/process_detector/factory"
+require "zoom_slack/process_detector/mac"
+require "zoom_slack/profile_updater"
+require "zoom_slack/status"
+require "zoom_slack/syncer"

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+status="$1"
+slack_api_token="xoxp-2181524299-5057542636-491827359222-fcb3ef281c1f5e6eaff4da13689cb0bb"
+
+set_status() {
+  text="$1"
+  emoji="$2"
+  exp="$3"
+  
+  echo "Setting status to '${emoji} ${text}', expiring at ${exp}"
+  #echo '{"profile":{"status_text":"' + $text + '","status_emoji":"' + $emoji + '","status_expiration":' + $exp '}}'
+  #curl -s -X POST -H "Authorization: Bearer ${slack_api_token}" -H 'Content-type: application/json;charset=UTF-8' --data '{"profile":{"status_text":"${text}","status_emoji":"${emoji}","status_expiration":${exp}}}' https://slack.com/api/users.profile.set
+}
+
+if [ "$status" = "meeting" ] ; then
+  set_status "In a meeting", ":spiral_calendar_pad:", 0
+elif [ "$status" = "clear" ] ; then
+  set_status "", "", 0
+elif [ "$status" = "lunch" ] ; then
+  set_status "Lunch", ":fork_and_knife:", 0
+fi
