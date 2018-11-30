@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe ZoomSlack::ProfileUpdater do
+RSpec.describe ZoomSlack::Syncer do
   let(:token) { "abc123" }
   let(:profile_updater) { instance_spy(ZoomSlack::ProfileUpdater) }
   let(:process_detector) { instance_spy(ZoomSlack::ProcessDetector::Base) }
