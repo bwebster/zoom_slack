@@ -1,3 +1,4 @@
 .env.local
 Gemfile.lock
 pkg/
+spec/examples.txt
