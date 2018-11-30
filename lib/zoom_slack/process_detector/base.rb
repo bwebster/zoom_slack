@@ -6,5 +6,11 @@ module ZoomSlack
     def self.for_platform
       Mac.new
     end
+
+    class Base
+      def running?
+        raise NotImplementedError
+      end
+    end
   end
 end

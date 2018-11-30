@@ -4,6 +4,7 @@ require "bundler/setup"
 Bundler.setup
 
 require "zoom_slack"
+require "webmock/rspec"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

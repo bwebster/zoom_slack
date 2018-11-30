@@ -4,7 +4,7 @@ require "tmpdir"
 
 module ZoomSlack
   module ProcessDetector
-    class Mac
+    class Mac < Base
       def running?
         compile
         process_running?

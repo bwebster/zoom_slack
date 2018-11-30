@@ -5,8 +5,9 @@ require "json"
 
 module ZoomSlack
   class ProfileUpdater
-    def initialize(token:)
+    def initialize(token:, stderr: STDERR)
       self.token = token
+      self.stderr = stderr
     end
 
     def status(status)
@@ -15,7 +16,7 @@ module ZoomSlack
 
     private
 
-    attr_accessor :token
+    attr_accessor :token, :stderr
 
     def update_profile(status)
       response = connection.post do |req|
@@ -32,7 +33,7 @@ module ZoomSlack
 
     def human_readable_error(response)
       json = JSON.parse(response.body)
-      puts "Unable to update Slack profile. Did you pass in the right token?" unless json.fetch("ok")
+      stderr.print "Unable to update Slack profile. Did you pass in the right token?\n" unless json.fetch("ok")
     end
 
     def connection
