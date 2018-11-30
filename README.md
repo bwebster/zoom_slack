@@ -1,4 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/zoom_slack.svg)](https://badge.fury.io/rb/zoom_slack)
+[![Build Status](https://travis-ci.org/bwebster/zoom_slack.svg?branch=master)](https://travis-ci.org/bwebster/zoom_slack)
 
 # zoom_slack
 
