@@ -2,6 +2,8 @@
 
 # zoom_slack
 
+**Note: this is alpha quality software, and still under active development!**
+
 This gem provides an easy way to automatically set your Slack status any time you are in a Zoom meeting.  
 
 The current implementation will only work on Mac OS X, but other operating system implementations are welcome!
@@ -32,3 +34,10 @@ You can obtain an oauth token by creating a new app and installing it into your 
 1. Under the "Settings" sidebar, click "Install App", then click "Install App to Workspace"
 1. Click "Authorize"
 1. Copy you OAuth Access Token
+
+## Todo
+
+1. Tests!
+1. Customizable text, emoji, and expiration
+1. Documentation
+1. Support for additional platforms
