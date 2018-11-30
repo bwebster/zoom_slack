@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/zoom_slack.svg)](https://badge.fury.io/rb/zoom_slack)
+
 # zoom_slack
 
 This gem provides an easy way to automatically set your Slack status any time you are in a Zoom meeting.  
