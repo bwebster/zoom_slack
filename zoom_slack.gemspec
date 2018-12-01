@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "zoom_slack/version"
+
 Gem::Specification.new do |s|
   s.name        = "zoom_slack"
   s.version     = ZoomSlack::VERSION
