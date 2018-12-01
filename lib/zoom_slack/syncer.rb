@@ -2,9 +2,10 @@
 
 module ZoomSlack
   class Syncer
-    def initialize(token:,
-                   profile_updater: ProfileUpdater.new(token: token),
+    def initialize(config,
+                   profile_updater: ProfileUpdater.new(token: config.token),
                    process_detector: ProcessDetector.for_platform)
+      self.config = config
       self.profile_updater = profile_updater
       self.process_detector = process_detector
     end
@@ -19,14 +20,14 @@ module ZoomSlack
 
     private
 
-    attr_accessor :profile_updater, :process_detector
+    attr_accessor :config, :profile_updater, :process_detector
 
     def in_meeting_status
-      Status.new(text: "In a meeting", emoji: ":spiral_calendar_pad:", expires: 0)
+      Status.new(text: config.meeting_text, emoji: config.meeting_emoji, expires: config.meeting_expires_at)
     end
 
     def clear_status
-      Status.new
+      Status.new(text: config.clear_text, emoji: config.clear_emoji)
     end
   end
 end

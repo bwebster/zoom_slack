@@ -1,8 +1,53 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require "optparse"
 require "zoom_slack"
 
-token = ARGV[0] || ENV.fetch("SLACK_API_TOKEN")
+config = ZoomSlack::Config.new
 
-ZoomSlack::Syncer.new(token: token).sync
+OptionParser.new do |opts|
+  opts.banner = "Usage: zoom_slack [options]"
+
+  opts.separator ""
+  opts.separator "Authentication options:"
+
+  opts.on("-t", "--token TOKEN",
+          "Slack token (defaults to $#{ZoomSlack::Config::TOKEN_DEFAULT_ENV})") do |v|
+    config.token = v
+  end
+
+  opts.separator ""
+  opts.separator "Profile status options:"
+
+  opts.on("--text TEXT",
+          "Status text (defaults to '#{ZoomSlack::Config::MEETING_TEXT_DEFAULT}')") do |v|
+    config.meeting_text = v
+  end
+  opts.on("--emoji EMOJI",
+          "Status emoji (defaults to '#{ZoomSlack::Config::MEETING_EMOJI_DEFAULT}')") do |v|
+    config.meeting_emoji = v
+  end
+  opts.on("--expires N",
+          "Status expires in N minutes (defaults to #{ZoomSlack::Config::MEETING_EXPIRES_IN_MIN_DEFAULT})") do |v|
+    config.meeting_expires_in_min = v
+  end
+  opts.on("--clear-text TEXT",
+          "Clear status text (defaults to '#{ZoomSlack::Config::CLEAR_TEXT_DEFAULT}')") do |v|
+    config.clear_text = v
+  end
+  opts.on("--clear-emoji EMOJI",
+          "Clear status emoji (defaults to '#{ZoomSlack::Config::CLEAR_EMOJI_DEFAULT}')") do |v|
+    config.clear_emoji = v
+  end
+
+  opts.separator ""
+  opts.separator "Common options:"
+
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+end.parse!
+
+ZoomSlack::Syncer.new(config).sync

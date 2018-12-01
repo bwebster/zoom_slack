@@ -3,6 +3,7 @@
 module ZoomSlack
 end
 
+require "zoom_slack/config"
 require "zoom_slack/process_detector/base"
 require "zoom_slack/process_detector/mac"
 require "zoom_slack/profile_updater"

@@ -5,6 +5,8 @@ Bundler.setup
 
 require "zoom_slack"
 require "webmock/rspec"
+require "timecop"
+require "climate_control"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
