@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "zoom_slack"
-  s.version     = "0.0.1"
+  s.version     = ZoomSlack::VERSION
   s.date        = "2018-11-29"
   s.summary     = "Zoom to Slack integration"
   s.description = "Automatically update your Slack status when you're in a Zoom meeting."
