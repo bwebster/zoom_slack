@@ -20,6 +20,26 @@ Next, [create a new Slack app](#Creating-a-New-App), and install it in your work
 Then add a cron entry via `crontab -e` like this
 
     * * * * * zoom_slack <oauth_access_token>
+    
+## Usage
+
+You can see all the various config options by running `zoom_slack -h`
+
+    $ zoom_slack -h
+    Usage: zoom_slack [options]
+
+    Authentication options:
+        -t, --token TOKEN               Slack token (defaults to $SLACK_API_TOKEN)
+
+    Profile status options:
+        --text TEXT                     Status text (defaults to 'In a meeting')
+        --emoji EMOJI                   Status emoji (defaults to ':spiral_calendar_pad:')
+        --expires N                     Status expires in N minutes (defaults to 0)
+        --clear-text TEXT               Clear status text (defaults to '')
+        --clear-emoji EMOJI             Clear status emoji (defaults to '')
+
+    Common options:
+        -h, --help                      Show this message
 
 ## Creating a New App
 
@@ -38,7 +58,5 @@ You can obtain an oauth token by creating a new app and installing it into your 
 
 ## Todo
 
-1. Tests!
-1. Customizable text, emoji, and expiration
-1. Documentation
+1. Better documentation
 1. Support for additional platforms
