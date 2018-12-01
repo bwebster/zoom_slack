@@ -6,7 +6,7 @@ RSpec.describe ZoomSlack::ProcessDetector::Base do
       expect(ZoomSlack::ProcessDetector.for_platform).to be_instance_of(ZoomSlack::ProcessDetector::Mac)
     end
   end
-  
+
   describe "#running" do
     it "should raise exception" do
       expect { subject.running? }.to raise_error(NotImplementedError)

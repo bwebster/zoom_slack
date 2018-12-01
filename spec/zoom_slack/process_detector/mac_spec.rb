@@ -9,6 +9,8 @@ RSpec.describe ZoomSlack::ProcessDetector::Mac do
 
   subject { described_class.new(open: open) }
 
+  after { remove_compiled }
+
   def remove_compiled
     FileUtils.remove_dir(compiled_path, true)
   end
@@ -23,8 +25,6 @@ RSpec.describe ZoomSlack::ProcessDetector::Mac do
         remove_compiled
         allow(open).to receive(:capture3).with("osascript", compiled_path).and_return(["", nil, nil])
       end
-
-      after { remove_compiled }
 
       it "should compile" do
         expect(open).to receive(:capture3).with("osacompile", "-o", compiled_path, source_path)
