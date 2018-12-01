@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+$:.unshift File.expand_path("../lib", __FILE__)
 require "zoom_slack/version"
 
 Gem::Specification.new do |s|
