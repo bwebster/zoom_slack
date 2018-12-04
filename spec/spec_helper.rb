@@ -1,5 +1,14 @@
 # frozen_string_literal: true
 
+if ENV.key?("CODECOV_TOKEN")
+  # Test coverage reporting
+  require "simplecov"
+  require "codecov"
+
+  SimpleCov.start
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
+
 require "bundler/setup"
 Bundler.setup
 
