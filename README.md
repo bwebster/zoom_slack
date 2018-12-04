@@ -1,5 +1,7 @@
 [![Gem Version](https://badge.fury.io/rb/zoom_slack.svg)](https://badge.fury.io/rb/zoom_slack)
 [![Build Status](https://travis-ci.org/bwebster/zoom_slack.svg?branch=master)](https://travis-ci.org/bwebster/zoom_slack)
+[![Maintainability](https://api.codeclimate.com/v1/badges/16072bb9fca7ac37115c/maintainability)](https://codeclimate.com/github/bwebster/zoom_slack/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/16072bb9fca7ac37115c/test_coverage)](https://codeclimate.com/github/bwebster/zoom_slack/test_coverage)
 
 # zoom_slack
 
