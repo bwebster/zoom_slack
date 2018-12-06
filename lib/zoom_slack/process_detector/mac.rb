@@ -18,6 +18,10 @@ module ZoomSlack
         process_running?
       end
 
+      def clean
+        FileUtils.remove_dir(compiled_path) if Dir.exist?(compiled_path)
+      end
+
       private
 
       attr_accessor :open

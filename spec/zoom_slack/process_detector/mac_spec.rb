@@ -19,6 +19,15 @@ RSpec.describe ZoomSlack::ProcessDetector::Mac do
     Dir.mkdir(compiled_path) unless Dir.exist?(compiled_path)
   end
 
+  describe "#clean" do
+    it "removes compiled directory" do
+      make_compiled
+      subject.clean
+
+      expect(Dir.exist?(compiled_path)).to be_falsey
+    end
+  end
+  
   describe "#running?" do
     describe "compiling the source script" do
       before do
