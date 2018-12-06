@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 ### Changed
 - Updated `CHANGELOG.md` to move unreleased into `v0.0.2`.
+- Changed approach to detecting Zoom on Mac.
 
 ## [v0.0.2] - 2018-11-30
 ### Added

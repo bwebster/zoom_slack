@@ -1,11 +1,9 @@
 tell application "System Events"
-    try
-        if exists (window 2 of process "zoom.us") then
-            #do shell script "~/bin/update_slack_status meeting"
-            return true 
-        else
-            #do shell script "~/bin/update_slack_status clear"
-            return false
-        end if
-    end try
+	set openWindows to item 1 of (get the {title} of every window of (every process whose visible is true))
+
+	repeat with theCurrentListItem in openWindows
+		if (theCurrentListItem as string) starts with "Zoom Meeting ID" then return true
+	end repeat
 end tell
+
+return false
