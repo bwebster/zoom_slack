@@ -11,6 +11,10 @@ module ZoomSlack
       def running?
         raise NotImplementedError
       end
+
+      def clean
+        raise NotImplementedError
+      end
     end
   end
 end

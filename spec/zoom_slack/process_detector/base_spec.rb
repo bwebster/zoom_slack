@@ -12,4 +12,10 @@ RSpec.describe ZoomSlack::ProcessDetector::Base do
       expect { subject.running? }.to raise_error(NotImplementedError)
     end
   end
+
+  describe "#clean" do
+    it "should raise exception" do
+      expect { subject.clean }.to raise_error(NotImplementedError)
+    end
+  end
 end
