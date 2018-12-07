@@ -7,19 +7,25 @@ require "zoom_slack"
 config = ZoomSlack::Config.new
 
 OptionParser.new do |opts|
-  opts.banner = "Usage: zoom_slack [options]"
-
+  opts.banner = "Automatically set your Slack status when in a Zoom meeting"
   opts.separator ""
-  opts.separator "Authentication options:"
 
+  opts.separator "Version:"
+  opts.separator "    #{ZoomSlack::VERSION}"
+  opts.separator ""
+
+  opts.separator "Usage: "
+  opts.separator "    $ zoom_slack [options]"
+  opts.separator ""
+
+  opts.separator "Authentication options:"
   opts.on("-t", "--token TOKEN",
           "Slack token (defaults to $#{ZoomSlack::Config::TOKEN_DEFAULT_ENV})") do |v|
     config.token = v
   end
-
   opts.separator ""
-  opts.separator "Profile status options:"
 
+  opts.separator "Profile status options:"
   opts.on("--text TEXT",
           "Status text (defaults to '#{ZoomSlack::Config::MEETING_TEXT_DEFAULT}')") do |v|
     config.meeting_text = v
@@ -40,16 +46,14 @@ OptionParser.new do |opts|
           "Clear status emoji (defaults to '#{ZoomSlack::Config::CLEAR_EMOJI_DEFAULT}')") do |v|
     config.clear_emoji = v
   end
-
   opts.separator ""
-  opts.separator "Common options:"
 
+  opts.separator "Common options:"
   opts.on("--clean",
           "Clean compiled scripts") do
     ZoomSlack::ProcessDetector.for_platform.clean
     exit
   end
-
   opts.on_tail("-h", "--help", "Show this message") do
     puts opts
     exit
