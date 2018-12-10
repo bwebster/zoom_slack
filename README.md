@@ -67,8 +67,10 @@ You'll need to grant accessibility access for the method you use to run `zoom_sl
 
 ![accessibility settings](https://github.com/bwebster/zoom_slack/blob/master/docs/images/mac_accessibility_settings.png)
 
-1. Open up System Preferences and select Security & Privacy
+1. Open up System Preferences 
+1. Select Security & Privacy
 1. Select Accessibility
+1. Select Privacy
 1. Ensure that `cron` is checked (you might also need to check `terminal` or `iTerm`)
    
 
