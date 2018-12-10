@@ -22,12 +22,7 @@ Then add a cron entry via `crontab -e` like this
 
     * * * * * zoom_slack <oauth_access_token>
    
-After `zoom_slack` has run for the first time, you'll likely need to enable an Accessibility setting to make things work:
-
-1. Open up System Preferences and select Security & Privacy
-1. Select Accessibility
-1. Ensure that `cron` is checked (you might also need to check `terminal` or `iTerm`)
-   
+After `zoom_slack` has run for the first time, you might need to enable some [accessibility settings](#Accessibility-Settings) for it to work properly.
     
 ## Usage
 
@@ -63,6 +58,19 @@ You can obtain an oauth token by creating a new app and installing it into your 
 1. Under the "Settings" sidebar, click "Install App", then click "Install App to Workspace"
 1. Click "Authorize"
 1. Copy you OAuth Access Token
+
+## Accessibility Settings
+
+### Mac
+
+You'll need to grant accessibility access for the method you use to run `zoom_slack`.  
+
+![accessibility settings](https://github.com/bwebster/zoom_slack/blob/master/docs/images/mac_accessibility_settings.png)
+
+1. Open up System Preferences and select Security & Privacy
+1. Select Accessibility
+1. Ensure that `cron` is checked (you might also need to check `terminal` or `iTerm`)
+   
 
 ## Todo
 
