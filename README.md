@@ -16,11 +16,18 @@ Install via Rubygems
 
     gem install zoom_slack
     
-Next, [create a new Slack app](#Creating-a-New-App), and install it in your workspace to get a oauth token.
+Next, [create a new Slack app](#Creating-a-New-App), and install it in your workspace to get a personal oauth token.
 
 Then add a cron entry via `crontab -e` like this
 
     * * * * * zoom_slack <oauth_access_token>
+   
+After `zoom_slack` has run for the first time, you'll likely need to enable an Accessibility setting to make things work:
+
+1. Open up System Preferences and select Security & Privacy
+1. Select Accessibility
+1. Ensure that `cron` is checked (you might also need to check `terminal` or `iTerm`)
+   
     
 ## Usage
 
